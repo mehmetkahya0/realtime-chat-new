@@ -1,3 +1,4 @@
+console.log('Script loaded');
 const socket = io('https://realtime-chat-new.vercel.app/');
 
 
