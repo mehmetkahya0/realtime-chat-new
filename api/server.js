@@ -14,6 +14,7 @@ const io = socketIo(server, {
 
 app.use(cors());
 
+console.log('Server loaded');
 io.on('connection', (socket) => {
     console.log('A user connected');
 
