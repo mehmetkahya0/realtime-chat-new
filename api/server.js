@@ -12,14 +12,13 @@ const io = socketIo(server, {
     }
 });
 
+console.log('Server is running');
 app.use(cors());
 
-console.log('Server loaded');
 io.on('connection', (socket) => {
     console.log('A user connected');
 
     socket.on('chat message', (msg) => {
-        console.log('Received message:', msg);
         io.emit('chat message', msg);
     });
 
@@ -28,8 +27,9 @@ io.on('connection', (socket) => {
     });
 });
 
+console.log('Starting server...');
+
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-    console.log('Server is running');
-    console.log(`WebSocket server is listening on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

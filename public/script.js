@@ -1,13 +1,9 @@
-console.log('Script loaded');
-const socket = io('http://localhost:3000');
+const socket = io('https://realtime-chat-new-mehmetkahya-mehmet-kahyas-projects.vercel.app');
 
-
-// if socket connection was succes, print succes
 socket.on('connect', function () {
     console.log('Connected to server');
 });
 
-// if socket connection was failed, print failed
 socket.on('connect_error', function () {
     console.log('Failed to connect to server');
 });
@@ -36,6 +32,5 @@ function sendMessage() {
         console.log('Sending message:', message);
         socket.emit('chat message', message);
         messageInput.value = '';
-
     }
 }
