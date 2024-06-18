@@ -1,5 +1,5 @@
 console.log('Script loaded');
-const socket = io('localhost:3000');
+const socket = io('http://localhost:3000');
 
 
 // if socket connection was succes, print succes
